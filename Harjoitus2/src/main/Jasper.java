@@ -1,3 +1,4 @@
+package main;
 public class Jasper {
 
     public Farmarit farmarit;
@@ -12,8 +13,12 @@ public class Jasper {
         this.kengat = kengat;
     }
 
-    public Jasper createJasper(JasperFactory jasuFactory){
-        return null;
+    public static Jasper createJasper(VaateFactory vaateTehdas) {
+        Farmarit f = vaateTehdas.createFarmarit();
+        TPaita t = vaateTehdas.createTPaita();
+        Lippis l = vaateTehdas.createLippis();
+        Kengat k = vaateTehdas.createKengat();
+        return new Jasper(f, t, l, k);
     }
 
     public String toString() {
